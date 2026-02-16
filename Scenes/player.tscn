@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://b8yap068xtmht"]
+
+[ext_resource type="Script" uid="uid://diddyphqnlskj" path="res://Scripts/player/player.gd" id="1_cvnsp"]
+[ext_resource type="Script" uid="uid://d21kjy4u3c5rs" path="res://Scripts/player/player_stats_controller.gd" id="1_v0iea"]
+[ext_resource type="Texture2D" uid="uid://helb0q5wvq5y" path="res://icon.svg" id="3_6t5aa"]
+[ext_resource type="Script" uid="uid://dgwg2foati3tb" path="res://Scripts/player/player_attack_controller.gd" id="3_vgqql"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fkybt"]
+size = Vector2(50, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
+size = Vector2(130, 130)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vgqql"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_6t5aa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_cvnsp")
+
+[node name="PlayerStatsController" type="Node" parent="."]
+script = ExtResource("1_v0iea")
+
+[node name="PlayerAttackController" type="Node2D" parent="."]
+script = ExtResource("3_vgqql")
+
+[node name="AttackPivot" type="Marker2D" parent="PlayerAttackController"]
+
+[node name="AttackArea" type="Area2D" parent="PlayerAttackController/AttackPivot"]
+position = Vector2(100, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerAttackController/AttackPivot/AttackArea"]
+shape = SubResource("RectangleShape2D_fkybt")
+
+[node name="AttackCooldownTimer" type="Timer" parent="PlayerAttackController"]
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cvnsp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vgqql")
