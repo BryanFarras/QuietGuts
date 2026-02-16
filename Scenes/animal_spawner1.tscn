@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8q31dfc64uss"]
+
+[ext_resource type="Script" uid="uid://b5b42umlx0ccf" path="res://Scripts/Animals/passive_spawner1.gd" id="1_w7tra"]
+
+[node name="spawner1" type="Node2D"]
+script = ExtResource("1_w7tra")
