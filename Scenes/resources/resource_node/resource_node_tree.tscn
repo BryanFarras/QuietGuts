@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cabowq57gdbib"]
+
+[ext_resource type="PackedScene" uid="uid://reithyt1awdn" path="res://Scenes/resources/resource_node/resource_node_base.tscn" id="1_r3nwf"]
+[ext_resource type="PackedScene" uid="uid://bsjrymopfn6m4" path="res://Scenes/resources/resource_wood.tscn" id="2_54kqa"]
+
+[node name="ResourceNodeTree" instance=ExtResource("1_r3nwf")]
+max_health = 30
+drop_scene = ExtResource("2_54kqa")
+drop_radius = 100

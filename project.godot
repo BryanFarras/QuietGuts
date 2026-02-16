@@ -18,6 +18,11 @@ config/icon="res://icon.svg"
 [autoload]
 
 PlayerInteractionEvent="*res://Scripts/event_system/player_interaction_event.gd"
+InventoryEvent="*res://Scripts/event_system/inventory_event.gd"
+
+[global_group]
+
+Player=""
 
 [input]
 

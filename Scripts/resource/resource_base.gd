@@ -14,6 +14,6 @@ func _ready():
 	connect("body_entered", Callable(self, "_on_body_entered"))
 
 func _on_body_entered(body):
-	if body.has_method("add_item"):
-		body.add_item(resource_type, amount)
+	if body.is_in_group("Player"):
+		InventoryEvent.add_item_to_inventory.emit(resource_type, amount)
 		queue_free()

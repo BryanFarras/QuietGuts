@@ -1,5 +1,5 @@
 extends Node
-class_name PlayerStatsController
+class_name PlayerStats
 
 var max_health := 100
 var health := 100

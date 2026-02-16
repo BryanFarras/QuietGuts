@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8yap068xtmht"]
+[gd_scene load_steps=9 format=3 uid="uid://b8yap068xtmht"]
 
 [ext_resource type="Script" uid="uid://diddyphqnlskj" path="res://Scripts/player/player.gd" id="1_cvnsp"]
-[ext_resource type="Script" uid="uid://d21kjy4u3c5rs" path="res://Scripts/player/player_stats_controller.gd" id="1_v0iea"]
+[ext_resource type="Script" uid="uid://d21kjy4u3c5rs" path="res://Scripts/player/player_stats.gd" id="1_v0iea"]
 [ext_resource type="Texture2D" uid="uid://helb0q5wvq5y" path="res://icon.svg" id="3_6t5aa"]
-[ext_resource type="Script" uid="uid://dgwg2foati3tb" path="res://Scripts/player/player_attack_controller.gd" id="3_vgqql"]
+[ext_resource type="Script" uid="uid://8bh82sl8geaj" path="res://Scripts/player/inventory.gd" id="3_fkybt"]
+[ext_resource type="Script" uid="uid://dgwg2foati3tb" path="res://Scripts/player/player_attack.gd" id="3_vgqql"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fkybt"]
 size = Vector2(50, 100)
@@ -22,25 +23,28 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 motion_mode = 1
 script = ExtResource("1_cvnsp")
 
-[node name="PlayerStatsController" type="Node" parent="."]
+[node name="PlayerStats" type="Node" parent="."]
 script = ExtResource("1_v0iea")
 
-[node name="PlayerAttackController" type="Node2D" parent="."]
+[node name="Inventory" type="Node" parent="."]
+script = ExtResource("3_fkybt")
+
+[node name="PlayerAttack" type="Node2D" parent="."]
 script = ExtResource("3_vgqql")
 
-[node name="AttackPivot" type="Marker2D" parent="PlayerAttackController"]
+[node name="AttackPivot" type="Marker2D" parent="PlayerAttack"]
 
-[node name="AttackArea" type="Area2D" parent="PlayerAttackController/AttackPivot"]
+[node name="AttackArea" type="Area2D" parent="PlayerAttack/AttackPivot"]
 position = Vector2(100, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerAttackController/AttackPivot/AttackArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerAttack/AttackPivot/AttackArea"]
 shape = SubResource("RectangleShape2D_fkybt")
 
-[node name="AttackCooldownTimer" type="Timer" parent="PlayerAttackController"]
+[node name="AttackCooldownTimer" type="Timer" parent="PlayerAttack"]
 one_shot = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

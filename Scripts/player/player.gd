@@ -4,8 +4,6 @@ extends CharacterBody2D
 @export var acceleration := 800.0
 @export var friction := 900.0
 
-var inventory := {}
-
 var input_direction := Vector2.ZERO
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -34,9 +32,3 @@ func apply_movement(delta):
 			Vector2.ZERO,
 			friction * delta
 		)
-
-func add_item(type, amount):
-	if inventory.has(type):
-		inventory[type] += amount
-	else:
-		inventory[type] = amount

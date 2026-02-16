@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cp41w5amyps3c"]
+
+[ext_resource type="PackedScene" uid="uid://reithyt1awdn" path="res://Scenes/resources/resource_node/resource_node_base.tscn" id="1_06m56"]
+[ext_resource type="PackedScene" uid="uid://c3y0jrgd1o4q" path="res://Scenes/resources/resource_stone.tscn" id="2_noces"]
+
+[node name="ResourceNodeStone" instance=ExtResource("1_06m56")]
+drop_scene = ExtResource("2_noces")
+drop_amount = 5
+drop_radius = 100
