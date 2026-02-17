@@ -1,10 +1,59 @@
-[gd_scene load_steps=9 format=3 uid="uid://b8yap068xtmht"]
+[gd_scene load_steps=22 format=3 uid="uid://b8yap068xtmht"]
 
 [ext_resource type="Script" uid="uid://diddyphqnlskj" path="res://Scripts/player/player.gd" id="1_cvnsp"]
 [ext_resource type="Script" uid="uid://d21kjy4u3c5rs" path="res://Scripts/player/player_stats.gd" id="1_v0iea"]
 [ext_resource type="Texture2D" uid="uid://helb0q5wvq5y" path="res://icon.svg" id="3_6t5aa"]
 [ext_resource type="Script" uid="uid://8bh82sl8geaj" path="res://Scripts/player/inventory.gd" id="3_fkybt"]
 [ext_resource type="Script" uid="uid://dgwg2foati3tb" path="res://Scripts/player/player_attack.gd" id="3_vgqql"]
+[ext_resource type="Script" uid="uid://boxisujyysjh0" path="res://SO/inventory_slot.gd" id="4_x3wgy"]
+
+[sub_resource type="Resource" id="Resource_x3wgy"]
+script = ExtResource("4_x3wgy")
+metadata/_custom_type_script = "uid://boxisujyysjh0"
+
+[sub_resource type="Resource" id="Resource_3smsa"]
+script = ExtResource("4_x3wgy")
+metadata/_custom_type_script = "uid://boxisujyysjh0"
+
+[sub_resource type="Resource" id="Resource_8erm5"]
+script = ExtResource("4_x3wgy")
+metadata/_custom_type_script = "uid://boxisujyysjh0"
+
+[sub_resource type="Resource" id="Resource_f1ek2"]
+script = ExtResource("4_x3wgy")
+metadata/_custom_type_script = "uid://boxisujyysjh0"
+
+[sub_resource type="Resource" id="Resource_tx1dd"]
+script = ExtResource("4_x3wgy")
+metadata/_custom_type_script = "uid://boxisujyysjh0"
+
+[sub_resource type="Resource" id="Resource_gymyn"]
+script = ExtResource("4_x3wgy")
+metadata/_custom_type_script = "uid://boxisujyysjh0"
+
+[sub_resource type="Resource" id="Resource_pu2lt"]
+script = ExtResource("4_x3wgy")
+metadata/_custom_type_script = "uid://boxisujyysjh0"
+
+[sub_resource type="Resource" id="Resource_ukyrk"]
+script = ExtResource("4_x3wgy")
+metadata/_custom_type_script = "uid://boxisujyysjh0"
+
+[sub_resource type="Resource" id="Resource_7dp3o"]
+script = ExtResource("4_x3wgy")
+metadata/_custom_type_script = "uid://boxisujyysjh0"
+
+[sub_resource type="Resource" id="Resource_h4iuc"]
+script = ExtResource("4_x3wgy")
+metadata/_custom_type_script = "uid://boxisujyysjh0"
+
+[sub_resource type="Resource" id="Resource_fd4e3"]
+script = ExtResource("4_x3wgy")
+metadata/_custom_type_script = "uid://boxisujyysjh0"
+
+[sub_resource type="Resource" id="Resource_qqcod"]
+script = ExtResource("4_x3wgy")
+metadata/_custom_type_script = "uid://boxisujyysjh0"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fkybt"]
 size = Vector2(50, 100)
@@ -23,15 +72,16 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="CharacterBody2D" groups=["Player"]]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 motion_mode = 1
 script = ExtResource("1_cvnsp")
 
 [node name="PlayerStats" type="Node" parent="."]
 script = ExtResource("1_v0iea")
 
-[node name="Inventory" type="Node" parent="."]
+[node name="PlayerInventory" type="Node" parent="."]
 script = ExtResource("3_fkybt")
+slots = Array[ExtResource("4_x3wgy")]([SubResource("Resource_x3wgy"), SubResource("Resource_3smsa"), SubResource("Resource_8erm5"), SubResource("Resource_f1ek2"), SubResource("Resource_tx1dd"), SubResource("Resource_gymyn"), SubResource("Resource_pu2lt"), SubResource("Resource_ukyrk"), SubResource("Resource_7dp3o"), SubResource("Resource_h4iuc"), SubResource("Resource_fd4e3"), SubResource("Resource_qqcod")])
 
 [node name="PlayerAttack" type="Node2D" parent="."]
 script = ExtResource("3_vgqql")

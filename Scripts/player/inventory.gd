@@ -1,32 +1,30 @@
 extends Node
 class_name Inventory
 
-signal inventory_updated
-
-var items := {}
+@export var slots: Array[InventorySlot]
 
 func _ready():
-	InventoryEvent.add_item_to_inventory.connect(Callable(self, "add_item"))
-	InventoryEvent.remove_item_from_inventory.connect(Callable(self, "remove_item"))
+	InventoryEvent.add_item_to_inventory.connect(add_item)
 
-func add_item(item_type: ResourceBase.ResourceType, amount: int = 1):
-	if items.has(item_type):
-		items[item_type] += amount
-	else:
-		items[item_type] = amount
-	
-	InventoryEvent.inventory_updated.emit()
 
-func remove_item(item_type: ResourceBase.ResourceType, amount: int = 1):
-	if not items.has(item_type):
-		return
-	
-	items[item_type] -= amount
-	
-	if items[item_type] <= 0:
-		items.erase(item_type)
-	
-	InventoryEvent.inventory_updated.emit()
+func add_item(item: ItemData, quantity: int = 1):
+	print("Adding item: ", item.name, " x", quantity)
 
-func get_amount(item_type: ResourceBase.ResourceType) -> int:
-	return items.get(item_type, 0)
+	# 1️⃣ Try stack first
+	for slot in slots:
+		if slot.item == null:
+			continue
+		if slot.item == item and slot.amount < item.max_stack:
+			slot.amount += quantity
+			InventoryEvent.inventory_updated.emit(self)
+			return true
+
+	# 2️⃣ Find empty slot
+	for slot in slots:
+		if slot.is_empty():
+			slot.item = item
+			slot.amount = quantity
+			InventoryEvent.inventory_updated.emit(self)
+			return true
+
+	return false # inventory full

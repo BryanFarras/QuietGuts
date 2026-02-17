@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://dus15supocch5"]
+
+[ext_resource type="Script" uid="uid://b3olpj0i5pqqt" path="res://SO/item_data.gd" id="1_0dxko"]
+[ext_resource type="Texture2D" uid="uid://helb0q5wvq5y" path="res://icon.svg" id="1_g6hhf"]
+
+[resource]
+script = ExtResource("1_0dxko")
+name = "Wood"
+icon = ExtResource("1_g6hhf")
+metadata/_custom_type_script = "uid://b3olpj0i5pqqt"

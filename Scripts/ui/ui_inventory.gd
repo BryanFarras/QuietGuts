@@ -1,16 +1,16 @@
-extends CanvasLayer
+extends Control
 
-@onready var player = $"../Player"
-@onready var inventory = player.get_node("Inventory")
+@export var slot_scene: PackedScene
 
-@onready var wood_label = $VBoxContainer/WoodLabel
-@onready var stone_label = $VBoxContainer/StoneLabel
-@onready var food_label = $VBoxContainer/FoodLabel
+@onready var slots: = $NinePatchRect/GridContainer.get_children()
+
+func _unhandled_input(event):
+	if event.is_action_pressed("inventory"):
+		visible = !visible
 
 func _ready():
-	InventoryEvent.inventory_updated.connect(Callable(self, "update_ui"))
-	update_ui()
+	InventoryEvent.inventory_updated.connect(_on_inventory_updated)
 
-func update_ui():
-	wood_label.text = "Wood: " + str(inventory.get_amount(ResourceBase.ResourceType.WOOD))
-	stone_label.text = "Stone: " + str(inventory.get_amount(ResourceBase.ResourceType.STONE))
+func _on_inventory_updated(inv):
+	for i in min(inv.slots.size(), slots.size()):
+		slots[i].update_slot(inv.slots[i])
