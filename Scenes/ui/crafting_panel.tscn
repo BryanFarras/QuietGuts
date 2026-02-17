@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://s3hmvar0uynt"]
+
+[ext_resource type="Script" uid="uid://cmc00km8agkwn" path="res://Scripts/ui/crafting_panel.gd" id="1_4gx2i"]
+[ext_resource type="Texture2D" uid="uid://n6hsn1o1n77x" path="res://Assets/PlaceHolder/inventory-background.png" id="1_eo8wi"]
+
+[node name="CraftingPanel" type="Panel"]
+script = ExtResource("1_4gx2i")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(164, 124)
+layout_mode = 0
+offset_right = 164.0
+offset_bottom = 124.0
+texture = ExtResource("1_eo8wi")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="RecipeList" type="VBoxContainer" parent="NinePatchRect"]
+custom_minimum_size = Vector2(60, 120)
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 62.0
+offset_bottom = 122.0
+
+[node name="RequiredList" type="VBoxContainer" parent="NinePatchRect"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 62.0
+offset_top = 2.0
+offset_right = 162.0
+offset_bottom = 82.0
+
+[node name="CraftButton" type="Button" parent="NinePatchRect"]
+custom_minimum_size = Vector2(60, 32)
+layout_mode = 0
+offset_left = 100.0
+offset_top = 90.0
+offset_right = 160.0
+offset_bottom = 122.0
+text = "CRAFT"

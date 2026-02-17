@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CraftingRecipe" load_steps=6 format=3 uid="uid://djtid7igmddnn"]
+
+[ext_resource type="Script" uid="uid://b3olpj0i5pqqt" path="res://SO/inventory/item_data.gd" id="1_mcvn6"]
+[ext_resource type="Resource" uid="uid://dus15supocch5" path="res://SO/inventory/items/item_wood.tres" id="2_7t63x"]
+[ext_resource type="Resource" uid="uid://b16nsc5sh4vjp" path="res://SO/inventory/items/item_stone.tres" id="3_cmu7n"]
+[ext_resource type="Resource" uid="uid://bsrql0b0eb88n" path="res://SO/inventory/items/item_stone_tool.tres" id="4_cpyn5"]
+[ext_resource type="Script" uid="uid://cpcoqyitofo25" path="res://SO/crafting/crafting_recipe.gd" id="5_6nf1l"]
+
+[resource]
+script = ExtResource("5_6nf1l")
+result_item = ExtResource("4_cpyn5")
+required_items = Array[ExtResource("1_mcvn6")]([ExtResource("2_7t63x"), ExtResource("3_cmu7n")])
+required_amounts = Array[int]([3, 2])
+metadata/_custom_type_script = "uid://cpcoqyitofo25"

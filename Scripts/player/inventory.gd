@@ -5,6 +5,7 @@ class_name Inventory
 
 func _ready():
 	InventoryEvent.add_item_to_inventory.connect(add_item)
+	InventoryEvent.inventory_updated.emit(self)
 
 
 func add_item(item: ItemData, quantity: int = 1):
@@ -28,3 +29,26 @@ func add_item(item: ItemData, quantity: int = 1):
 			return true
 
 	return false # inventory full
+
+func remove_item(item: ItemData, quantity: int):
+
+	for slot in slots:
+		if slot.item == item:
+			var remove_amount = min(quantity, slot.amount)
+			slot.amount -= remove_amount
+			quantity -= remove_amount
+
+			if slot.amount <= 0:
+				slot.item = null
+
+			if quantity <= 0:
+				break
+
+	InventoryEvent.inventory_updated.emit(self)
+
+func get_item_amount(item: ItemData) -> int:
+	var total := 0
+	for slot in slots:
+		if slot.item == item:
+			total += slot.amount
+	return total

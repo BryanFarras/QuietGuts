@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bsrql0b0eb88n"]
+
+[ext_resource type="Script" uid="uid://b3olpj0i5pqqt" path="res://SO/inventory/item_data.gd" id="1_87kbs"]
+[ext_resource type="Texture2D" uid="uid://helb0q5wvq5y" path="res://icon.svg" id="1_gkkha"]
+
+[resource]
+script = ExtResource("1_87kbs")
+name = "Stone Tool"
+icon = ExtResource("1_gkkha")
+max_stack = 1
+metadata/_custom_type_script = "uid://b3olpj0i5pqqt"

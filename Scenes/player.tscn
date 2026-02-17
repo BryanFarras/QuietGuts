@@ -1,11 +1,15 @@
-[gd_scene load_steps=22 format=3 uid="uid://b8yap068xtmht"]
+[gd_scene load_steps=26 format=3 uid="uid://b8yap068xtmht"]
 
 [ext_resource type="Script" uid="uid://diddyphqnlskj" path="res://Scripts/player/player.gd" id="1_cvnsp"]
 [ext_resource type="Script" uid="uid://d21kjy4u3c5rs" path="res://Scripts/player/player_stats.gd" id="1_v0iea"]
 [ext_resource type="Texture2D" uid="uid://helb0q5wvq5y" path="res://icon.svg" id="3_6t5aa"]
 [ext_resource type="Script" uid="uid://8bh82sl8geaj" path="res://Scripts/player/inventory.gd" id="3_fkybt"]
 [ext_resource type="Script" uid="uid://dgwg2foati3tb" path="res://Scripts/player/player_attack.gd" id="3_vgqql"]
-[ext_resource type="Script" uid="uid://boxisujyysjh0" path="res://SO/inventory_slot.gd" id="4_x3wgy"]
+[ext_resource type="Script" uid="uid://boxisujyysjh0" path="res://SO/inventory/inventory_slot.gd" id="4_x3wgy"]
+[ext_resource type="Script" uid="uid://cj0f7f2jvh2vl" path="res://Scripts/player/crafting_system.gd" id="5_3smsa"]
+[ext_resource type="Script" uid="uid://cpcoqyitofo25" path="res://SO/crafting/crafting_recipe.gd" id="6_f1ek2"]
+[ext_resource type="Resource" uid="uid://djtid7igmddnn" path="res://SO/crafting/recipes/stone_tool.tres" id="7_tx1dd"]
+[ext_resource type="Resource" uid="uid://wf5b5tf30l6o" path="res://SO/crafting/recipes/plank.tres" id="8_tx1dd"]
 
 [sub_resource type="Resource" id="Resource_x3wgy"]
 script = ExtResource("4_x3wgy")
@@ -82,6 +86,11 @@ script = ExtResource("1_v0iea")
 [node name="PlayerInventory" type="Node" parent="."]
 script = ExtResource("3_fkybt")
 slots = Array[ExtResource("4_x3wgy")]([SubResource("Resource_x3wgy"), SubResource("Resource_3smsa"), SubResource("Resource_8erm5"), SubResource("Resource_f1ek2"), SubResource("Resource_tx1dd"), SubResource("Resource_gymyn"), SubResource("Resource_pu2lt"), SubResource("Resource_ukyrk"), SubResource("Resource_7dp3o"), SubResource("Resource_h4iuc"), SubResource("Resource_fd4e3"), SubResource("Resource_qqcod")])
+
+[node name="CraftingSystem" type="Node" parent="." node_paths=PackedStringArray("inventory")]
+script = ExtResource("5_3smsa")
+inventory = NodePath("../PlayerInventory")
+recipes = Array[ExtResource("6_f1ek2")]([ExtResource("7_tx1dd"), ExtResource("8_tx1dd")])
 
 [node name="PlayerAttack" type="Node2D" parent="."]
 script = ExtResource("3_vgqql")
