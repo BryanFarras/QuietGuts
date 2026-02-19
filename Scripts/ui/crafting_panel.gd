@@ -10,11 +10,11 @@ var crafting_system: CraftingSystem
 var selected_recipe: CraftingRecipe
 
 func _enter_tree() -> void:
-	InventoryEvent.inventory_updated.connect(_on_inventory_updated)
+	InventoryEvent.inventory_initialized.connect(_on_inventory_initialized)
 	InventoryEvent.crafting_system_updated.connect(_on_crafting_system_updated)
 
 func _exit_tree() -> void:
-	InventoryEvent.inventory_updated.disconnect(_on_inventory_updated)
+	InventoryEvent.inventory_initialized.disconnect(_on_inventory_initialized)
 	InventoryEvent.crafting_system_updated.disconnect(_on_crafting_system_updated)
 
 func _ready():
@@ -61,7 +61,7 @@ func _on_CraftButton_pressed():
 	if crafting_system.craft(selected_recipe):
 		update_required_list()
 
-func _on_inventory_updated(inv):
+func _on_inventory_initialized(inv):
 	inventory = inv
 
 	if selected_recipe:

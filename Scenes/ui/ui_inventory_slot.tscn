@@ -36,7 +36,6 @@ layout_mode = 2
 scale = Vector2(0.125, 0.125)
 
 [node name="AmountLabel" type="Label" parent="CenterContainer/Panel"]
-visible = false
 custom_minimum_size = Vector2(19, 26)
 layout_mode = 0
 offset_left = -4.0

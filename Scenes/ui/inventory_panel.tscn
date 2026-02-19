@@ -32,39 +32,3 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 columns = 4
-
-[node name="UiInventorySlot" parent="NinePatchRect/GridContainer" instance=ExtResource("2_2464i")]
-layout_mode = 2
-
-[node name="UiInventorySlot2" parent="NinePatchRect/GridContainer" instance=ExtResource("2_2464i")]
-layout_mode = 2
-
-[node name="UiInventorySlot3" parent="NinePatchRect/GridContainer" instance=ExtResource("2_2464i")]
-layout_mode = 2
-
-[node name="UiInventorySlot4" parent="NinePatchRect/GridContainer" instance=ExtResource("2_2464i")]
-layout_mode = 2
-
-[node name="UiInventorySlot5" parent="NinePatchRect/GridContainer" instance=ExtResource("2_2464i")]
-layout_mode = 2
-
-[node name="UiInventorySlot6" parent="NinePatchRect/GridContainer" instance=ExtResource("2_2464i")]
-layout_mode = 2
-
-[node name="UiInventorySlot7" parent="NinePatchRect/GridContainer" instance=ExtResource("2_2464i")]
-layout_mode = 2
-
-[node name="UiInventorySlot8" parent="NinePatchRect/GridContainer" instance=ExtResource("2_2464i")]
-layout_mode = 2
-
-[node name="UiInventorySlot9" parent="NinePatchRect/GridContainer" instance=ExtResource("2_2464i")]
-layout_mode = 2
-
-[node name="UiInventorySlot10" parent="NinePatchRect/GridContainer" instance=ExtResource("2_2464i")]
-layout_mode = 2
-
-[node name="UiInventorySlot11" parent="NinePatchRect/GridContainer" instance=ExtResource("2_2464i")]
-layout_mode = 2
-
-[node name="UiInventorySlot12" parent="NinePatchRect/GridContainer" instance=ExtResource("2_2464i")]
-layout_mode = 2

@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 PlayerInteractionEvent="*res://Scripts/event_system/player_interaction_event.gd"
 InventoryEvent="*res://Scripts/event_system/inventory_event.gd"
+InputManager="*res://Scripts/managers/input_manager.gd"
 
 [global_group]
 

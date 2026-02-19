@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://b8yap068xtmht"]
+[gd_scene load_steps=36 format=3 uid="uid://b8yap068xtmht"]
 
 [ext_resource type="Script" uid="uid://diddyphqnlskj" path="res://Scripts/player/player.gd" id="1_cvnsp"]
 [ext_resource type="Script" uid="uid://d21kjy4u3c5rs" path="res://Scripts/player/player_stats.gd" id="1_v0iea"]
@@ -11,27 +11,27 @@
 [ext_resource type="Resource" uid="uid://djtid7igmddnn" path="res://SO/crafting/recipes/stone_tool.tres" id="7_tx1dd"]
 [ext_resource type="Resource" uid="uid://wf5b5tf30l6o" path="res://SO/crafting/recipes/plank.tres" id="8_tx1dd"]
 
-[sub_resource type="Resource" id="Resource_x3wgy"]
-script = ExtResource("4_x3wgy")
-metadata/_custom_type_script = "uid://boxisujyysjh0"
-
-[sub_resource type="Resource" id="Resource_3smsa"]
-script = ExtResource("4_x3wgy")
-metadata/_custom_type_script = "uid://boxisujyysjh0"
-
-[sub_resource type="Resource" id="Resource_8erm5"]
-script = ExtResource("4_x3wgy")
-metadata/_custom_type_script = "uid://boxisujyysjh0"
-
-[sub_resource type="Resource" id="Resource_f1ek2"]
-script = ExtResource("4_x3wgy")
-metadata/_custom_type_script = "uid://boxisujyysjh0"
-
 [sub_resource type="Resource" id="Resource_tx1dd"]
 script = ExtResource("4_x3wgy")
 metadata/_custom_type_script = "uid://boxisujyysjh0"
 
 [sub_resource type="Resource" id="Resource_gymyn"]
+script = ExtResource("4_x3wgy")
+metadata/_custom_type_script = "uid://boxisujyysjh0"
+
+[sub_resource type="Resource" id="Resource_l6n3p"]
+script = ExtResource("4_x3wgy")
+metadata/_custom_type_script = "uid://boxisujyysjh0"
+
+[sub_resource type="Resource" id="Resource_olqyp"]
+script = ExtResource("4_x3wgy")
+metadata/_custom_type_script = "uid://boxisujyysjh0"
+
+[sub_resource type="Resource" id="Resource_wpjfl"]
+script = ExtResource("4_x3wgy")
+metadata/_custom_type_script = "uid://boxisujyysjh0"
+
+[sub_resource type="Resource" id="Resource_bi64h"]
 script = ExtResource("4_x3wgy")
 metadata/_custom_type_script = "uid://boxisujyysjh0"
 
@@ -56,6 +56,46 @@ script = ExtResource("4_x3wgy")
 metadata/_custom_type_script = "uid://boxisujyysjh0"
 
 [sub_resource type="Resource" id="Resource_qqcod"]
+script = ExtResource("4_x3wgy")
+metadata/_custom_type_script = "uid://boxisujyysjh0"
+
+[sub_resource type="Resource" id="Resource_igrcy"]
+script = ExtResource("4_x3wgy")
+metadata/_custom_type_script = "uid://boxisujyysjh0"
+
+[sub_resource type="Resource" id="Resource_fs7ks"]
+script = ExtResource("4_x3wgy")
+metadata/_custom_type_script = "uid://boxisujyysjh0"
+
+[sub_resource type="Resource" id="Resource_2ijsl"]
+script = ExtResource("4_x3wgy")
+metadata/_custom_type_script = "uid://boxisujyysjh0"
+
+[sub_resource type="Resource" id="Resource_p1odr"]
+script = ExtResource("4_x3wgy")
+metadata/_custom_type_script = "uid://boxisujyysjh0"
+
+[sub_resource type="Resource" id="Resource_0gysh"]
+script = ExtResource("4_x3wgy")
+metadata/_custom_type_script = "uid://boxisujyysjh0"
+
+[sub_resource type="Resource" id="Resource_vfarp"]
+script = ExtResource("4_x3wgy")
+metadata/_custom_type_script = "uid://boxisujyysjh0"
+
+[sub_resource type="Resource" id="Resource_y6uwr"]
+script = ExtResource("4_x3wgy")
+metadata/_custom_type_script = "uid://boxisujyysjh0"
+
+[sub_resource type="Resource" id="Resource_83xs0"]
+script = ExtResource("4_x3wgy")
+metadata/_custom_type_script = "uid://boxisujyysjh0"
+
+[sub_resource type="Resource" id="Resource_ypfnu"]
+script = ExtResource("4_x3wgy")
+metadata/_custom_type_script = "uid://boxisujyysjh0"
+
+[sub_resource type="Resource" id="Resource_xuaoq"]
 script = ExtResource("4_x3wgy")
 metadata/_custom_type_script = "uid://boxisujyysjh0"
 
@@ -85,11 +125,10 @@ script = ExtResource("1_v0iea")
 
 [node name="PlayerInventory" type="Node" parent="."]
 script = ExtResource("3_fkybt")
-slots = Array[ExtResource("4_x3wgy")]([SubResource("Resource_x3wgy"), SubResource("Resource_3smsa"), SubResource("Resource_8erm5"), SubResource("Resource_f1ek2"), SubResource("Resource_tx1dd"), SubResource("Resource_gymyn"), SubResource("Resource_pu2lt"), SubResource("Resource_ukyrk"), SubResource("Resource_7dp3o"), SubResource("Resource_h4iuc"), SubResource("Resource_fd4e3"), SubResource("Resource_qqcod")])
+slots = Array[ExtResource("4_x3wgy")]([SubResource("Resource_tx1dd"), SubResource("Resource_gymyn"), SubResource("Resource_l6n3p"), SubResource("Resource_olqyp"), SubResource("Resource_wpjfl"), SubResource("Resource_bi64h"), SubResource("Resource_pu2lt"), SubResource("Resource_ukyrk"), SubResource("Resource_7dp3o"), SubResource("Resource_h4iuc"), SubResource("Resource_fd4e3"), SubResource("Resource_qqcod"), SubResource("Resource_igrcy"), SubResource("Resource_fs7ks"), SubResource("Resource_2ijsl"), SubResource("Resource_p1odr"), SubResource("Resource_0gysh"), SubResource("Resource_vfarp"), SubResource("Resource_y6uwr"), SubResource("Resource_83xs0"), SubResource("Resource_ypfnu"), SubResource("Resource_xuaoq")])
 
-[node name="CraftingSystem" type="Node" parent="." node_paths=PackedStringArray("inventory")]
+[node name="CraftingSystem" type="Node" parent="."]
 script = ExtResource("5_3smsa")
-inventory = NodePath("../PlayerInventory")
 recipes = Array[ExtResource("6_f1ek2")]([ExtResource("7_tx1dd"), ExtResource("8_tx1dd")])
 
 [node name="PlayerAttack" type="Node2D" parent="."]

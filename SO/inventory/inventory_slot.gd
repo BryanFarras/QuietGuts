@@ -1,5 +1,5 @@
 extends Resource
-class_name InventorySlot
+class_name SlotData
 
 var item: ItemData
 var amount: int = 0

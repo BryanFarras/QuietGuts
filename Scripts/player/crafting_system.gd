@@ -6,10 +6,10 @@ class_name CraftingSystem
 var inventory: Inventory
 
 func _enter_tree() -> void:
-	InventoryEvent.inventory_updated.connect(_on_inventory_updated)
+	InventoryEvent.inventory_initialized.connect(_on_inventory_initialized)
 
 func _exit_tree() -> void:
-	InventoryEvent.inventory_updated.disconnect(_on_inventory_updated)
+	InventoryEvent.inventory_initialized.disconnect(_on_inventory_initialized)
 
 func _ready():
 	InventoryEvent.crafting_system_updated.emit(self)
@@ -43,5 +43,5 @@ func craft(recipe: CraftingRecipe):
 
 	return true
 
-func _on_inventory_updated(inv):
+func _on_inventory_initialized(inv):
 	inventory = inv
